@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Assignmentstudentcourse</title>
+    <style>
+        @media (min-width: 1000px) {
+            .navbar {
+                background-color: #F97300;
+            }
+
+            form {
+
+                width: 500px;
+                margin: auto;
+                padding-top: 100px;
+
+            }
+
+            h1 {
+                text-align: center;
+            }
+
+            footer {
+                background-color: #F97300;
+                margin-bottom: 0px;
+                padding-bottom: 0mm;
+                padding: 35px;
+
+            }
+
+            nav {
+                padding-top: 80px;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html">Home</a>
+    </nav>
+    <div id="form">
+        <h1>assignment per student per course form</h1>
+        <form class="main-form needs-validation" novalidate>
+
+            <div class="form-group">
+                <label for="assignment">Title assignment</label>
+                <select name="assignment" id="assignment" required class="form-control">
+                 <option value="" selected disabled hidden>choose assignment title</option>
+                    <option value="ass1">Private school</option>
+                    <option value="ass2">efood</option>
+                    <option value="ass3">delivery app</option>
+                    <option value="ass4">viber app</option>
+                </select>
+                <div class="invalid-feedback">please you must choose assignment</div>
+            </div>
+            <div class="form-group">
+                <label for="student">Student</label>
+                <select name="student" id="student" required class="form-control">
+                   <option value="" selected disabled hidden>choose student</option>
+                    <option value="student1">Aris Plexidas</option>
+                    <option value="student2">Vaggelis Skandalis</option>
+                    <option value="student3">Kostas Augeros</option>
+                    <option value="student4">Konstantinos Papadatos</option>
+                </select>
+                <div class="invalid-feedback">please you must choose a student </div>
+            </div>
+            <div class="form-group">
+                <label for="course">Title course</label>
+                <select name="course" id="course" required class="form-control">
+                  <option value="" selected disabled hidden>choose course title</option>
+                    <option value="course1">cb10</option>
+                    <option value="course2">cb9</option>
+                </select>
+                <div class="invalid-feedback">please you must choose course title</div>
+            </div>
+            <div class="form-group">
+                <label for="oralmark">Oral mark</label>
+                <input type="number" min="0" max="100" name="oralmark" id="oralmark" required class="form-control">
+                <div class="invalid-feedback">please enter number between 0 and 100</div>
+            </div>
+            <div class="form-group">
+                <label for="totalmark">Total mark</label>
+                <input type="number" min="0" max="100" name="totalmark" id="totalmark" required class="form-control">
+                <div class="invalid-feedback">please enter number between 0 and 100</div>
+            </div>
+            
+           <button type="submit" class="btn btn-outline-primary">Submit</button>
+            <script>
+                var form = document.querySelector('.needs-validation');
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                })
+            </script>
+        </form>
+    </div>
+    <nav>
+        <h2 class="card-header text-center font-weight-bold  py-4">Assignments per students per courses</h2>
+        <span class="table-add float-right mb-3 mr-2"></span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+            <thead>
+                <tr>
+                    <th class="text-center">Title assignment</th>
+                    <th class="text-center">Student</th>
+                    <th class="text-center">Title course</th>
+                    <th class="text-center">Oral mark</th>
+                    <th class="text-center">Mark mark</th>
+                    <th class="text-center" >Edit</th>
+                    <th class="text-center" >Update</th>
+                    <th class="text-center" >Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="pt-3-half" contenteditable="true">Private school </td>
+                    <td class="pt-3-half" contenteditable="true">Dionisis Tsilioris</td>
+                    <td class="pt-3-half" contenteditable="true">Cb 10</td>
+                    <td class="pt-3-half" contenteditable="true">25</td>
+                    <td class="pt-3-half" contenteditable="true">85</td>
+                    <td class="pt-3-half">
+                        <span class=""><button id="edit" type="button"
+                                class="btn btn-primary btn-rounded btn-sm my-0">Edit</button></span>
+                    </td>
+                    <td class="pt-3-half">
+                        <span class=""><button id="update" type="button"
+                                class="btn btn-primary btn-rounded btn-sm my-0">Update</button></span>
+                    </td>
+                    <td>
+                        <span class="table-remove"><button id="remove" type="button"
+                                class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pt-3-half" contenteditable="true">efood</td>
+                    <td class="pt-3-half" contenteditable="true">Philippos Kontekas</td>
+                    <td class="pt-3-half" contenteditable="true">Cb 10</td>
+                    <td class="pt-3-half" contenteditable="true">25</td>
+                    <td class="pt-3-half" contenteditable="true">85</td>
+                    <td class="pt-3-half">
+                        <span class=""><button id="edit" type="button"
+                                class="btn btn-primary btn-rounded btn-sm my-0">Edit</button></span>
+                    </td>
+                    <td class="pt-3-half">
+                        <span class=""><button id="update" type="button"
+                                class="btn btn-primary btn-rounded btn-sm my-0">Update</button></span>
+                    </td>
+                    <td>
+                        <span class="table-remove"><button id="remove" type="button"
+                                class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </nav>
+    <footer></footer>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

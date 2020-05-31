@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Student</title>
+    <style>
+        .navbar {
+            background-color: #F97300;
+        }
+
+        #student {
+
+            padding-top: 10px;
+            float: left;
+        }
+
+        form {
+            width: 500px;
+            margin: auto;
+            padding-top: 100px;
+            padding-left: 200px;
+            float: left;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        footer {
+            background-color: #F97300;
+            ;
+            margin-bottom: 0px;
+            padding-bottom: 0mm;
+            padding: 35px;
+
+        }
+
+        nav {
+            padding-top: 580px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html">Home</a>
+    </nav>
+
+    <div id="student">
+        <img src="img/students.jpg" alt="">
+    </div>
+
+    <div id="form">
+        <h1>Student form</h1>
+        <form class="main-form needs-validation" novalidate>
+
+            <div class="form-group">
+                <label for="firstname">first name</label>
+                <input type="text" name="firstname" id="firstname" required pattern="[A-Za-z]+" class="form-control">
+                <div class="invalid-feedback">please enter alphabetic characters</div>
+            </div>
+            <div class="form-group">
+                <label for="lastname">last name</label>
+                <input type="text" name="lastname" id="lastname" required pattern="[A-Za-z]+" class="form-control">
+                <div class="invalid-feedback">please enter alphabetic characters</div>
+            </div>
+            <div class="form-group">
+                <label for="dateofbirth">date of birth</label>
+                <input type="date" name="dateofbirth" id="dateofbirth" required class="form-control">
+                <div class="invalid-feedback">please enter date of birth</div>
+            </div>
+            <div class="form-group">
+                <label for="tuitionfees">tuition fees</label>
+                <input type="number" min="0" max="3000" name="tuitionfees" id="tuitionfees" required
+                    class="form-control">
+                <div class="invalid-feedback">please enter number</div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-outline-primary" onclick="">Submit</button>
+            </div>
+
+            <script>
+                var form = document.querySelector('.needs-validation');
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                })
+            </script>
+        </form>
+    </div>
+    <nav>
+        <h2 class="card-header text-center font-weight-bold  py-4">Students</h2>
+        <span class="table-add float-right mb-3 mr-2"></span>
+        <table class="table table-bordered table-responsive-md table-striped text-center">
+            <thead>
+                <tr>
+                    <th class="text-center">First Name</th>
+                    <th class="text-center">Last name</th>
+                    <th class="text-center">Date of birth</th>
+                    <th class="text-center">Tuition Fees</th>
+                    <th class="text-center">Edit</th>
+                    <th class="text-center">Update</th>
+                    <th class="text-center">Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="pt-3-half" contenteditable="true">Dionisis </td>
+                    <td class="pt-3-half" contenteditable="true">Tsilioris</td>
+                    <td class="pt-3-half" contenteditable="true">10/08/1987</td>
+                    <td class="pt-3-half" contenteditable="true">2500</td>
+
+                    <td class="pt-3-half">
+                        <span class=""><button type="button"
+                                class="btn btn-primary btn-rounded btn-sm my-0">Edit</button></span>
+
+                    </td>
+                    <td class="pt-3-half">
+                        <span class=""><button type="button"
+                                class="btn btn-primary btn-rounded btn-sm my-0">Update</button></span>
+
+                    </td>
+                    <td>
+                        <span class="table-remove"><button type="button"
+                                class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pt-3-half" contenteditable="true">Philippos</td>
+                    <td class="pt-3-half" contenteditable="true">Kontekas</td>
+                    <td class="pt-3-half" contenteditable="true">18/06/1983</td>
+                    <td class="pt-3-half" contenteditable="true">2500</td>
+
+                    <td class="pt-3-half">
+                        <span class=""><button type="button"
+                                class="btn btn-primary btn-rounded btn-sm my-0">Edit</button></span>
+
+                    </td>
+                    <td class="pt-3-half">
+                        <span class=""><button type="button"
+                                class="btn btn-primary btn-rounded btn-sm my-0">Update</button></span>
+
+                    </td>
+                    <td>
+                        <span class="table-remove"><button type="button"
+                                class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </nav>
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="school.js"></script>
+
+</body>
+
+</html>

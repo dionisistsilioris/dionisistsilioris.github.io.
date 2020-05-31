@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Trainerpercourse</title>
+    <style>
+        .navbar {
+            background-color: #F97300;
+        }
+
+        form {
+
+            width: 500px;
+            margin: auto;
+            padding-top: 100px;
+
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        footer {
+            background-color: #F97300;
+            margin-bottom: 0px;
+            padding-bottom: 0mm;
+            padding: 35px;
+
+        }
+
+        nav {
+            padding-top: 80px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a class="navbar-brand" href="index.html">Home</a>
+    </nav>
+
+    <div id="form">
+        <h1>Trainer per course form</h1>
+        <form class="main-form needs-validation" novalidate>
+
+            <div class="form-group">
+                <label for="course">Title course</label>
+                <select name="course" id="course" required class="form-control">
+                    <option value="" selected disabled hidden>choose course</option>
+                    <option value="course1">cb10</option>
+                    <option value="course2">cb9</option>
+                </select>
+                <div class="invalid-feedback">please you must choose course title</div>
+            </div>
+            <div class="form-group">
+                <label for="trainer">Trainer</label>
+                <select name="trainer" id="trainer" required class="form-control">
+                    <option value="" selected disabled hidden>choose</option>
+                    <option value="trainer1">Panos Bozas</option>
+                    <option value="trainer2">George Irakleidis</option>
+                    <option value="trainer3">Kostas Stroggylos</option>
+                    <option value="trainer4">Michalis Chamilos</option>
+            </select>
+            <div class="invalid-feedback">please you must choose trainer</div>
+            </div>
+            <button type="submit" class="btn btn-outline-primary" onclick="">Submit</button>
+            <script>
+                var form = document.querySelector('.needs-validation');
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                })
+            </script>
+        </form>
+
+    </div>
+    <nav>
+        <span class="table-add float-right mb-3 mr-2"></span>
+        <h2 class="card-header text-center font-weight-bold  py-4">Trainers per courses</h2>
+        <table id="trainerTable" class="table table-bordered table-responsive-md table-striped text-center">
+            <thead>
+                <tr>
+                    <th class="text-center">Title</th>
+                    <th class="text-center">Trainer</th>
+
+
+                    <th class="text-center">Edit</th>
+                    <th class="text-center">Update</th>
+                    <th class="text-center">Remove</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="pt-3-half" contenteditable="true">Java</td>
+                    <td class="pt-3-half" contenteditable="true">George Pasparakis </td>
+
+
+                    <td class="pt-3-half">
+                        <span class=""><button type="button" class="btn btn-primary btn-rounded btn-sm my-0"
+                                id="edit">Edit</button></span>
+
+                    </td>
+                    <td class="pt-3-half">
+                        <span class=""><button type="button" class="btn btn-primary btn-rounded btn-sm my-0"
+                                id="update">update</button></span>
+
+                    </td>
+                    <td>
+                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0"
+                                id="remove">Remove</button></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="pt-3-half" contenteditable="true">javascript</td>
+                    <td class="pt-3-half" contenteditable="true">Argiris Pagidas</td>
+
+
+                    <td class="pt-3-half">
+                        <span class=""><button type="button" class="btn btn-primary btn-rounded btn-sm my-0"
+                                id="edit">Edit</button></span>
+
+                    </td>
+                    <td class="pt-3-half">
+                        <span class=""><button type="button" class="btn btn-primary btn-rounded btn-sm my-0"
+                                id="update">update</button></span>
+
+                    </td>
+                    <td>
+                        <span class="table-remove"><button type="button" class="btn btn-danger btn-rounded btn-sm my-0"
+                                id="remove">Remove</button></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </nav>
+    <footer></footer>
+
+    <script type="text/javascript" src="school.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
